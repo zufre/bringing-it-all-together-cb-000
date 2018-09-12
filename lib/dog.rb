@@ -33,11 +33,8 @@ class Dog
     self
   end
 
-  def self.new_from_db(row)
-    id = row[0]
-    name = row[1]
-    breed = row[2]
-    self.new(id: id, name: name, breed: breed)
+  def self.new_from_db(row)]
+    self.new(id: row[0], name: row[1], breed: row[2])
   end
 
   def self.create(name:, breed:)
@@ -85,5 +82,5 @@ class Dog
     SQL
     DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
-  
+
 end
